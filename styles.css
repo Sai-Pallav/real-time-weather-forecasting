@@ -1,0 +1,131 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Image Layer */
+body::after {
+    content: "";
+    background: url('img.png') no-repeat center center/cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+/* Header */
+h1 {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #0077b6;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Input Section */
+.input-container {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 12px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    width: 250px;
+    max-width: 80%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #005f99;
+    transform: scale(1.05);
+}
+
+/* Weather Info Boxes */
+#weatherInfo, #hourlyForecast {
+    background: rgba(0, 0, 0, 0.45);
+    margin: 1.5rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+#weatherInfo p, #hourlyForecast p {
+    font-size: 1.1rem;
+    margin: 0.6rem 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Hourly Card Grid */
+#hourlyForecast .hour-block {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+#hourlyForecast .hour-block:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    input, button {
+        width: 100%;
+        max-width: none;
+        border-radius: 20px;
+    }
+
+    .input-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    #weatherInfo, #hourlyForecast {
+        padding: 1.2rem;
+    }
+}
